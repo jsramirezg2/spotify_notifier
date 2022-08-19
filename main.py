@@ -139,7 +139,7 @@ def main():
 
         pprint(current_track_info, indent=4)
 
-        time.sleep(2)
+        time.sleep(1.5)
 
 
 verification = threading.Thread(target=main)
