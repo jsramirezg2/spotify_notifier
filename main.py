@@ -75,7 +75,8 @@ def get_current_track(access_token):
             otherFrame = Toplevel(root)
             otherFrame.attributes("-alpha", 0)
 
-            otherFrame.geometry("325x110-25+110")
+            otherFrame.minsize(width=300, height=110)
+            otherFrame.geometry("-25+110")
             otherFrame.configure(bg="#181818")
             otherFrame.overrideredirect(True)
             otherFrame.wm_attributes("-topmost", True)
