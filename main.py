@@ -92,7 +92,7 @@ def get_current_track(access_token):
 
             response = requests.get(img_url.get())
             img = Image.open(BytesIO(response.content))
-            img = img.resize((100, 100), Image.LANCZOS)
+            img = img.resize((100, 100), Image.Resampling.LANCZOS)
 
             photo = ImageTk.PhotoImage(img)
 
@@ -135,7 +135,7 @@ def get_current_track(access_token):
 
 
 def main():
-    while(True):
+    while (True):
         current_track_info = get_current_track(SPOTIFY_ACCESS_TOKEN)
 
         pprint(current_track_info, indent=4)
@@ -168,6 +168,6 @@ img_url = StringVar()
 
 
 if __name__ == "__main__":
-    root.withdraw()  # withdraw root window ||||||| remember to delete this and create a function for oauth of spotify
+    root.withdraw()
     verification.start()
     root.mainloop()
