@@ -92,7 +92,7 @@ def get_current_track(access_token):
 
             response = requests.get(img_url.get())
             img = Image.open(BytesIO(response.content))
-            img = img.resize((100, 100), Image.Resampling.LANCZOS)
+            img = img.resize((100, 100), Image.LANCZOS)
 
             photo = ImageTk.PhotoImage(img)
 
